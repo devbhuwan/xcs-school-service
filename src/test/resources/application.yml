@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: school-service
+---
+spring:
+  profiles: cucumber
+  data:
+    cassandra:
+      keyspace-name: sample
+      port: 9142
