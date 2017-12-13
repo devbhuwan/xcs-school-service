@@ -8,3 +8,9 @@ spring:
     cassandra:
       keyspace-name: sample
       port: 9142
+  cloud:
+    config:
+      enabled: false
+security:
+  basic:
+    enabled: false
