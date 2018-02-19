@@ -32,13 +32,16 @@ ext {
     springCloudServicesVersion = '1.6.0.RELEASE'
     cucumberVersion = '1.2.5'
     cassandraUnitSpringVersion = '3.3.0.2'
+    guavaVersion= '19.0'
+    keycloakVersion='3.4.1.Final'
 }
 
 dependencies {
     compile([
-            "com.google.guava:guava:19.0",
+            "com.google.guava:guava:${guavaVersion}",
             'org.springframework.boot:spring-boot-starter-data-cassandra',
             'org.springframework.boot:spring-boot-starter-webflux',
+            'org.keycloak:keycloak-spring-boot-starter',
             'org.projectlombok:lombok',
             "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
     ])
@@ -56,5 +59,6 @@ dependencyManagement {
     imports {
         mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:${springCloudServicesVersion}"
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "org.keycloak.bom:keycloak-adapter-bom:${keycloakVersion}"
     }
 }

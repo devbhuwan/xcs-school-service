@@ -1,0 +1,19 @@
+---
+spring:
+  profiles: keycloak
+keycloak:
+  auth-server-url: http://localhost:8080/auth
+  realm: x-cloud-school
+  resource: x-cloud-school-resources
+  public-client: true
+  security-constraints:
+    -
+      auth-roles:
+        - user
+      security-collections:
+        -
+          patterns:
+            - /schools/*
+---
+spring:
+  profiles: empty
